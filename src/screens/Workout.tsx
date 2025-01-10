@@ -1,40 +1,34 @@
 import { Button } from "@react-navigation/elements";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View, Text } from "react-native";
-import { WorkoutProps } from "../navigation/WorkoutTabs";
+import { StyleSheet, Text, View } from "react-native";
 
-export const WorkoutTab = ({ route }: WorkoutProps) => {
+export const Workout = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Button
         onPress={() => {
-          navigation.navigate("Exercise", {
-            exerciseName: "Bicep preacher Curls",
-          });
+          navigation.navigate("ProgressingWorkout");
+        }}
+        style={{ backgroundColor: "pink" }}
+      >
+        Start Workout
+      </Button>
+      <Text>Routines</Text>
+      <Button
+        onPress={() => {
+          navigation.navigate("Routine", { routineName: "Upper" });
         }}
       >
-        Bicep preacher Curls
+        Upper
       </Button>
 
       <Button
         onPress={() => {
-          navigation.navigate("Exercise", {
-            exerciseName: "Leg Extensions",
-          });
+          navigation.navigate("Routine", { routineName: "Lower" });
         }}
       >
-        Leg Extensions
-      </Button>
-
-      <Button
-        onPress={() => {
-          navigation.navigate("Superset", {
-            supersetName: "Biceps SS Triceps",
-          });
-        }}
-      >
-        Biceps SS Triceps
+        Lower
       </Button>
     </View>
   );

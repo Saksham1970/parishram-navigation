@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Alert, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { AuthFunctionsContext } from "../contexts/AuthContext";
+import { AuthFunctionsContext } from "../../contexts/AuthContext";
 
 export const SettingsScreenOptions = () => {
   const authFunctions = useContext(AuthFunctionsContext);

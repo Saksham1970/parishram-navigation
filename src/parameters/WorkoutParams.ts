@@ -1,5 +1,5 @@
-export type WorkoutParams = {
-  workoutName: string;
+export type RoutineParams = {
+  routineName: string;
 };
 
 export type SupersetParams = {

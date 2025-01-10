@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { GlobalHistory } from "../screens/GlobalHistory";
-import { Home } from "../screens/Home";
+import { Workout } from "../screens/Workout";
 import { Ionicons } from "@expo/vector-icons";
 import { Profile } from "../screens/Profile";
 import React from "react";
@@ -17,8 +17,8 @@ export const HomeTabs = createBottomTabNavigator({
       },
     },
 
-    Home: {
-      screen: Home,
+    Workout: {
+      screen: Workout,
       options: {
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="barbell-sharp" size={size} color={color} />

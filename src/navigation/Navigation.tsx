@@ -7,14 +7,14 @@ import * as React from "react";
 
 import { Profile } from "../screens/Profile";
 import { Settings } from "../screens/Settings";
-import { NotFound } from "../screens/NotFound";
 import { HomeTabs } from "./HomeTabs";
 import { SignIn } from "../screens/SignIn";
 import { AuthFunctionsContext, SignInContext } from "../contexts/AuthContext";
 import { SignOutDialog } from "../components/SignOutDialog";
-import { Workout } from "../navigation/WorkoutTabs";
-import { Exercise } from "./ExerciseTabs";
-import { Superset } from "./SupersetTabs";
+import { Routine } from "./Routine";
+import { Exercise } from "./Exercise";
+import { Superset } from "./Superset";
+import { ProgressingWorkout } from "../screens/ProgressingWorkout";
 
 const useIsSignedIn = () => React.useContext(SignInContext);
 const useIsSignedOut = () => !useIsSignedIn();
@@ -28,7 +28,7 @@ const RootStack = createNativeStackNavigator({
         headerShown: false,
       },
       initialParams: {
-        screen: "Home",
+        screen: "Workout",
       },
     },
     SignIn: {
@@ -57,12 +57,12 @@ const RootStack = createNativeStackNavigator({
         };
       },
     },
-    Workout: {
-      screen: Workout,
+    Routine: {
+      screen: Routine,
       options: ({ route }) => {
         return {
           // @ts-ignore
-          title: route.params.workoutName,
+          title: route.params.routineName,
         };
       },
     },
@@ -86,15 +86,15 @@ const RootStack = createNativeStackNavigator({
       },
     },
 
-    NotFound: {
-      screen: NotFound,
+    ProgressingWorkout: {
+      screen: ProgressingWorkout,
     },
   },
 });
 
 export const Navigation = createStaticNavigation(RootStack);
 
-type RootStackParamList = StaticParamList<typeof RootStack>;
+export type RootStackParamList = StaticParamList<typeof RootStack>;
 
 declare global {
   namespace ReactNavigation {

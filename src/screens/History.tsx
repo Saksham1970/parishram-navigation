@@ -1,18 +1,18 @@
 import { StyleSheet, View, Text } from "react-native";
-import { ExerciseProps } from "../navigation/ExerciseTabs";
-import { SupersetProps } from "../navigation/SupersetTabs";
-import { WorkoutProps } from "../navigation/WorkoutTabs";
+import { ExerciseProps } from "../navigation/Exercise";
+import { SupersetProps } from "../navigation/Superset";
+import { RoutineProps } from "../navigation/Routine";
 
 export const History = ({
   route,
-}: ExerciseProps | SupersetProps | WorkoutProps) => {
+}: ExerciseProps | SupersetProps | RoutineProps) => {
   let name: string;
   if ("exerciseName" in route.params) {
     name = route.params.exerciseName;
   } else if ("supersetName" in route.params) {
     name = route.params.supersetName;
   } else {
-    name = route.params.workoutName;
+    name = route.params.routineName;
   }
 
   return (

@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
-import { ExerciseProps } from "../navigation/ExerciseTabs";
-import { SupersetProps } from "../navigation/SupersetTabs";
+import { ExerciseProps } from "../navigation/Exercise";
+import { SupersetProps } from "../navigation/Superset";
 
 export const Instructions = ({ route }: ExerciseProps | SupersetProps) => {
   let name: string;
