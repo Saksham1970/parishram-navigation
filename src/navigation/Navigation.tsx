@@ -7,7 +7,7 @@ import * as React from "react";
 
 import { Profile } from "../screens/Profile";
 import { Settings } from "../screens/Settings";
-import { HomeTabs } from "./HomeTabs";
+import { Home } from "./Home";
 import { SignIn } from "../screens/SignIn";
 import { AuthFunctionsContext, SignInContext } from "../contexts/AuthContext";
 import { SignOutDialog } from "../components/SignOutDialog";
@@ -21,9 +21,9 @@ const useIsSignedOut = () => !useIsSignedIn();
 
 const RootStack = createNativeStackNavigator({
   screens: {
-    HomeTabs: {
+    Home: {
       if: useIsSignedIn,
-      screen: HomeTabs,
+      screen: Home,
       options: {
         headerShown: false,
       },

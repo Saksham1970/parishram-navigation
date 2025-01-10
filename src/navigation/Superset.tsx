@@ -4,8 +4,10 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { Stats } from "../screens/Stats";
 import { History } from "../screens/History";
 import { SupersetParams } from "../parameters/WorkoutParams";
+import { SupersetTab } from "../screens/SupersetTab";
 
 type TabsParamList = {
+  SupersetTab: SupersetParams;
   Stats: SupersetParams;
   History: SupersetParams;
 };
@@ -19,6 +21,12 @@ export const Superset = ({ route }: SupersetProps) => {
     <SupersetTabs.Navigator
       screenOptions={{ title: route.params.supersetName }}
     >
+      <SupersetTabs.Screen
+        name="SupersetTab"
+        component={SupersetTab}
+        options={{ tabBarLabel: "Superset" }}
+        initialParams={{ supersetName: route.params.supersetName }}
+      />
       <SupersetTabs.Screen
         name="Stats"
         component={Stats}

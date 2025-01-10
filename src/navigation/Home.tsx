@@ -6,7 +6,7 @@ import { Profile } from "../screens/Profile";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 
-export const HomeTabs = createBottomTabNavigator({
+export const Home = createBottomTabNavigator({
   screens: {
     History: {
       screen: GlobalHistory,

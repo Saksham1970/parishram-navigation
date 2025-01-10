@@ -16,7 +16,7 @@ export const ProgressingWorkout = () => {
           // Save workout info
           // Show stats
           alert("Workout saved! here are your non existent stats");
-          navigation.popTo("HomeTabs", { screen: "History" });
+          navigation.popTo("Home", { screen: "History" });
         }}
       >
         Finish Workout
